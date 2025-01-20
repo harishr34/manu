@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Anton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Ultra&display=swap');
+        .bg-container {
+          background-image: url("https://cdn.pixabay.com/photo/2020/04/12/20/37/abstract-5035778_640.jpg");
+          height: 100vh;
+          background-size: cover;
+        }
+        .tourism-card {
+          text-align: center;
+          background-color: transparent;
+          border:2.5px solid white;
+          border-radius: 25px;
+          padding: 16px;
+          margin-bottom: 20%;
+        }
+        .button {
+          color: white;
+          background-color: green;
+          width: 138px;
+          height: 36px;
+          border-width: 0px;
+          border-radius: 20px;
+        }
+        .main-heading {
+          font-family: "Roboto ";
+          font-weight: bold;
+          color: white;
+        }
+        .paragraph {
+          font-family: "Roboto";
+          font-size: 18px;
+          color: white;
+        }
+        .favourite-places-bg-container {
+          background-image: url("https://i0.wp.com/picjumbo.com/wp-content/uploads/dark-tech-glowing-background-free-photo.jpg?w=2210&quality=70");
+          height: 100vh;
+          background-size: cover;
+          padding: 24px;
+        }
+        .favourite-places-heading {
+          color: white;
+          font-family: "Roboto";
+          text-align: center;
+          font-size: 28px;
+          font-weight: bold;
+        }
+        .favourite-place-card-container {
+          background-color: transparent;
+          border:2.5px solid white;
+          padding: 16px;
+          border-radius: 8px;
+          padding: 16px;
+          margin-bottom: 15px;
+        }
+        .favourite-place-card-heading {
+          color: white;
+          font-family: "Roboto";
+          font-size: 23px;
+          font-weight: bold;
+        }
+        .favourite-place-card-description {
+          color: rgba(255, 255, 255, 0.628);
+          font-family: "Roboto";
+          font-size: 13px;
+        }
+        .favourite-place-card-image {
+          width: 80px;
+          height: 100px;
+          margin-left: auto;
+        }
+        .favourite-place-card-text-container {
+          margin-right: 15px;
+        }
+        .detailed-view-bg-container {
+          background-image: url("https://t3.ftcdn.net/jpg/07/46/95/46/360_F_746954673_VaR2YwZvNk4w5rZEVuo5U3yLfkHwEVEz.jpg");
+          background-size: cover;
+          padding:30px;
+        }
+        .detailed-view-heading {
+          color: white;
+          font-family: "Roboto";
+          font-size: 28px;
+          font-weight: bold;
+          padding: 24px;
+        }
+        .detailed-view-card-container {
+          background-color:transparent;
+          border:2.5px solid white;
+          border-bottom-right-radius: 8px;
+          border-bottom-left-radius: 8px;
+          margin: 24px;
+        }
+        .detailed-view-card-heading {
+          color: white;
+          font-family: "Roboto";
+          font-size: 23px;
+          font-weight: bold;
+        }
+        .detailed-view-card-description {
+          color: rgba(255, 255, 255, 0.628);
+          font-family: "Roboto";
+          font-size: 13px;
+        }
+        .detailed-view-card-text-container {
+          padding: 16px;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="sectionHome">
+      <div class="bg-container d-flex flex-column justify-content-end">
+        <div class="tourism-card">
+          <h1 class="main-heading">Most Papular Applications</h1>
+          <p class="paragraph">Explore Your Apps .</p>
+          <button class="button" onclick="display('sectionFavouritePlaces')">
+            Let Started
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="sectionFavouritePlaces">
+      <div class="favourite-places-bg-container">
+        <h1 class="favourite-places-heading">-:Applications:-</h1>
+        <div
+          class="favourite-place-card-container d-flex flex-row"
+          onclick="display('sectionTajMahalDetailedView')"
+        >
+          <div>
+            <h1 class="favourite-place-card-heading">Whatsapp</h1>
+            <p class="favourite-place-card-description">
+              WhatsApp Messenger, or simply WhatsApp, is an American freeware,
+              cross-platform centralized messaging and voice-over-IP service owned
+              by Facebook, Inc.
+            </p>
+          </div>
+          <img
+            src="https://store-images.s-microsoft.com/image/apps.8453.13655054093851568.4a371b72-2ce8-4bdb-9d83-be49894d3fa0.7f3687b9-847d-4f86-bb5c-c73259e2b38e"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div
+          class="favourite-place-card-container d-flex flex-row"
+          onclick="display('sectionGoldenTempleDetailedView')"
+        >
+          <div>
+            <h1 class="favourite-place-card-heading">Instagram</h1>
+            <p class="favourite-place-card-description">
+              Instagram is an American photo and video sharing social networking
+              service created by Kevin Systrom and Mike Krieger.
+            </p>
+          </div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Instagram_logo_2022.svg/1200px-Instagram_logo_2022.svg.png"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row" 
+            onclick="display('sectionMysorePalaceDetailedView')">
+          <div>
+            <h1 class="favourite-place-card-heading">Facebook</h1>
+            <p class="favourite-place-card-description">
+              Facebook is an American online social media and social networking
+              service
+            </p>
+          </div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <div class="favourite-place-card-container d-flex flex-row" 
+             onclick="display('sectionVaranasiTempleDetailedView')">
+          <div>
+            <h1 class="favourite-place-card-heading">Google</h1>
+            <p class="favourite-place-card-description">
+              Google LLC is an American multinational technology company that
+              specializes in Internet-related services and products
+            </p>
+          </div>
+          <img
+            src="https://yt3.googleusercontent.com/K8WVrQAQHTTwsHEtisMYcNai7p7XIlyEAdZg86qYw78ye57r5DRemHQ9Te4PcD_v98HB-ZvQjQ=s900-c-k-c0x00ffffff-no-rj"
+            class="favourite-place-card-image"
+          />
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionHome')">Back</button>
+      </div>
+    </div>
+
+    <div id="sectionTajMahalDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">WHATSAPP</h1>
+        <div class="detailed-view-card-container">
+          <div id="carouselExampleIndicators1" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#carouselExampleIndicators1"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="1"></li>
+              <li data-target="#carouselExampleIndicators1" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://i.pcmag.com/imagery/reviews/06ZvTNln3Toz309WtTLDiwP-25.fit_scale.size_760x427.v1652212718.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7XqJixJ8we24zxVwxhm24x6sl4WMlKkxHCg&s"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://shkspr.mobi/blog/wp-content/uploads/2022/11/WhatsApp-Web-To-Go-main-interface.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#carouselExampleIndicators1"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#carouselExampleIndicators1"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Whatsapp</h1>
+            <p class="detailed-view-card-description">
+              WhatsApp Messenger, or simply WhatsApp, is an American freeware,
+              cross-platform centralized messaging and voice-over-IP service owned
+              by Facebook, Inc. It allows users to send text messages and voice
+              messages, make voice and video calls, and share images, documents,
+              user locations, and other media. WhatsApp's client application runs
+              on mobile devices but is also accessible from desktop computers, as
+              long as the user's mobile device remains connected to the Internet
+              while they use the desktop app. The service requires users to provide
+              a standard cellular mobile number for registering with the service.
+              In January 2018, WhatsApp released a standalone business app targeted
+              at small business owners, called WhatsApp Business, to allow companies
+              to communicate with customers who use the standard WhatsApp client.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          Back
+        </button>
+      </div>
+    </div>
+
+    <div id="sectionGoldenTempleDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">INSTAGRAM</h1>
+        <div class="detailed-view-card-container">
+          <div id="goldenTempleCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+              <li
+                data-target="#goldenTempleCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="1"></li>
+              <li data-target="#goldenTempleCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7uepyLRqT_XOBWoPcMu-r87vdGQGkrCPLlXVHq2VsTO30jSUBtz_h2poGlO_KmJk8HfSQET0qMN_Fm68gmv0ehU1NtSb-saZnjrBmKU_5cq7vNS7_Qy1s0bKzX7fKbGgWpPOcjOKWAnI/s1600-rw/if-fb.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ_QGCFjnyfuNJ6O3rwsCJpx3OXL1jGncpfw&s"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCKiGAvewVrG9LcuykYDgonzp1tFRjWXKO3g&s"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#goldenTempleCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#goldenTempleCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Instagram</h1>
+            <p class="detailed-view-card-description">
+              Instagram is an American photo and video sharing social networking
+              service created by Kevin Systrom and Mike Krieger. In April 2012,
+              Facebook Inc. acquired the service for approximately US$1 billion in
+              cash and stock. The app allows users to upload media that can be
+              edited with filters and organized by hashtags and geographical
+              tagging. Posts can be shared publicly or with pre-approved followers.
+              Users can browse other users' content by tags and locations and view
+              trending content. Users can like photos and follow other users to add
+              their content to a personal feed.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          Back
+        </button>
+      </div>
+    </div>
+
+    <div id="sectionMysorePalaceDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">FACEBOOK</h1>
+        <div class="detailed-view-card-container">
+          <div>
+            <iframe width="1608" height="700" src="https://www.youtube.com/embed/XQ1o5rQr5yg?si=aRcfzzLro1bRtp34" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          </div>
+          <div class="detailed-view-card-text-container">
+          <h1 class="detailed-view-card-heading">Facebook</h1>
+          <p class="detailed-view-card-description">
+            Facebook is a social media and social networking service owned by the American technology conglomerate Meta. Created in 2004 by Mark Zuckerberg with four other Harvard College students and roommates Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes, its name derives from the face book directories often given to American university students. Membership was initially limited to Harvard students, gradually expanding to other North American universities. Since 2006, Facebook allows everyone to register from 13 years old, except in the case of a handful of nations, where the age requirement is 14 years.[6] As of December 2023, Facebook claimed almost 3.07 billion monthly active users worldwide.[7] As of November 2024, Facebook ranked as the third-most-visited website in the world, with 23% of its traffic coming from the United States.[8] It was the most downloaded mobile app of the 2010s.[9]
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          Back
+        </button>
+      </div>
+    </div>
+
+    <div id="sectionVaranasiTempleDetailedView">
+      <div class="detailed-view-bg-container">
+        <h1 class="detailed-view-heading">GOOGLE</h1>
+        <div class="detailed-view-card-container">
+          <div
+            id="varanasiTempleCarousel"
+            class="carousel slide"
+            data-ride="carousel"
+          >
+            <ol class="carousel-indicators">
+              <li
+                data-target="#varanasiTempleCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#varanasiTempleCarousel" data-slide-to="1"></li>
+              <li data-target="#varanasiTempleCarousel" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/3/32/Googleplex_HQ_%28cropped%29.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVvDBUqwc3UdpHGpspa7ByTFEJGg_7fJiNVw&s"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+              <div class="carousel-item">
+                <img
+                  src="https://www.planetizen.com/files/images/shutterstock_192086159.jpg"
+                  class="d-block w-100"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <a
+              class="carousel-control-prev"
+              href="#varanasiTempleCarousel"
+              role="button"
+              data-slide="prev"
+            >
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a
+              class="carousel-control-next"
+              href="#varanasiTempleCarousel"
+              role="button"
+              data-slide="next"
+            >
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+          <div class="detailed-view-card-text-container">
+            <h1 class="detailed-view-card-heading">Google</h1>
+            <p class="detailed-view-card-description">
+              Google LLC is an American multinational technology company that
+              specializes in Internet-related services and products, which include
+              online advertising technologies, a search engine, cloud computing,
+              software, and hardware. It is considered one of the Big Five
+              technology companies in the U.S. information technology industry,
+              alongside Amazon, Facebook, Apple, and Microsoft. Google was founded
+              in September 1998 by Larry Page and Sergey Brin while they were Ph.D.
+              students at Stanford University in California. Together, they own
+              about 14 percent of its publicly-listed shares and control 56 percent
+              of the stockholder voting power through supervoting stock. <br>
+              They incorporated Google as a California privately held company on
+              September 4, 1998, in California. Google was then reincorporated in
+              Delaware on October 22, 2002. An initial public offering (IPO) took
+              place on August 19, 2004, and Google moved to its headquarters in
+              Mountain View, California, nicknamed the Googleplex. In August 2015,
+              Google announced plans to reorganize its various interests as a
+              conglomerate called Alphabet Inc. Google is Alphabet's leading
+              subsidiary and will continue to be the umbrella company for
+              Alphabet's Internet interests. Sundar Pichai was appointed CEO of
+              Google, replacing Larry Page who became the CEO of Alphabet.
+            </p>
+          </div>
+        </div>
+        <button class="btn btn-dark" onclick="display('sectionFavouritePlaces')">
+          Back
+        </button>
+      </div>
+    </div>
+
+    <script>
+      function display(sectionId) {
+        const sections = document.querySelectorAll("div[id^='section']");
+        sections.forEach((section) => {
+          section.style.display = "none";
+        });
+        const selectedSection = document.getElementById(sectionId);
+        if (selectedSection) {
+          selectedSection.style.display = "block";
+        }
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        display("sectionHome");
+      });
+    </script>
+  </body>
+</html>
+
+
